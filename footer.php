@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="footer-item">
-                        <h5>Newsletter</h5>
+                        <h5>Newsletter & Update</h5>
                         <div class="newslatter-form">
                             <input type="text" placeholder="Your Email Here">
                             <button type="submit">Subscribe</button>

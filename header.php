@@ -28,9 +28,9 @@
     <!-- body -->
     <body>
     <!-- preloader -->
-<!-- <div id="preloder">
+<div id="preloder">
     <div class="loader"></div>
-</div> -->
+</div>
     <!-- Navigation header setup -->
     <header class="header-section">
         <div class="container-fluid">
