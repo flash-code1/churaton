@@ -1,4 +1,4 @@
-<?php $page = "room"; ?>
+<?php $page = "room"; $title = "Rooms";?>
 <?php
 include("header.php");
 ?>

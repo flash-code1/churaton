@@ -1,4 +1,4 @@
-<?php $page = "news"; ?>
+<?php $page = "news"; $title = "Blog & News"; ?>
 <?php
 include("header.php");
 ?>

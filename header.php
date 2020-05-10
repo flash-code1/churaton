@@ -6,7 +6,7 @@
     <meta name="keywords" content="Hotel, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Churaton | Hotel</title>
+    <title>Churaton Hotel | <?php echo $title; ?></title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
                     <a href="index.php"><img src="img/logo.png" alt=""></a>
                 </div>
                 <div class="nav-right">
-                    <a href="#" class="primary-btn">Reserve</a>
+                    <a href="rooms.php" class="primary-btn">Reserve</a>
                 </div>
                 <nav class="main-menu mobile-menu">
                     <ul>
