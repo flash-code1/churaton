@@ -184,11 +184,80 @@ include("header.php");
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="services-item">
+                        <div class="si-pic set-bg" data-setbg="design/x1/img/services/service-1.jpg">
+                            <div class="service-icon">
+                                <img src="design/x1/img/services/service-icon-1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="si-text">
+                            <h3>Pool</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="services-item">
+                        <div class="si-pic set-bg" data-setbg="img/gym2.jpg">
+                            <div class="service-icon">
+                                <img src="design/x1/img/services/service-icon-2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="si-text">
+                            <h3>Fitness Area</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="services-item">
+                        <div class="si-pic set-bg" data-setbg="img/food2.jpg">
+                            <div class="service-icon">
+                                <img src="design/x1/img/services/service-icon-4.png" alt="">
+                            </div>
+                        </div>
+                        <div class="si-text">
+                            <h3>Restaurant</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-sm-6">
+                    <div class="services-item">
+                        <div class="si-pic set-bg" data-setbg="design/x1/img/services/service-5.jpg">
+                            <div class="service-icon">
+                                <img src="design/x1/img/services/service-icon-5.png" alt="">
+                            </div>
+                        </div>
+                        <div class="si-text">
+                            <h3>City Guide</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-4 col-sm-6">
+                    <div class="services-item">
+                        <div class="si-pic set-bg" data-setbg="img/services/service-7.jpg">
+                            <div class="service-icon">
+                                <img src="img/services/service-icon-7.png" alt="">
+                            </div>
+                        </div>
+                        <div class="si-text">
+                            <h3>Spa & Sauna</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
     </section>
-    <!-- Home Page About Section End -->
-
+    <!-- Room Section End -->
     <!-- End for Count -->
 <?php
 include("footer.php");

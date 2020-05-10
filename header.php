@@ -51,7 +51,6 @@
                                 <li><a href="rooms.php">Reservation</a></li>
                                 <li><a href="#">Resturant</a></li>
                                 <li><a href="#">Gym Center</a></li>
-                                <li><a href="#">Airport Pickup</a></li>
                             </ul>
                         </li>
                         <li class="<?php if ($page == "news") { echo "active"; } ?>"><a href="./blog.php">News</a></li>
