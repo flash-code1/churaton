@@ -1,7 +1,7 @@
+<?php $page = "home"; ?>
 <?php
 include("header.php");
 ?>
-
 <!-- Hero Area Section Begin -->
 <section class="hero-area set-bg" data-setbg="img/bg1.jpg">
         <div class="container">
@@ -164,22 +164,22 @@ include("header.php");
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="about-img">
-                                <img src="img/.jpg" alt="">
+                                <img src="img/gym.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="about-img">
-                                <img src="img/home-about-2.jpg" alt="">
+                                <img src="img/gym2.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="about-img">
-                                <img src="img/home-about-3.jpg" alt="">
+                                <img src="img/food.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="about-img">
-                                <img src="img/home-about-4.jpg" alt="">
+                                <img src="img/pizza.jpg" alt="">
                             </div>
                         </div>
                     </div>

@@ -43,19 +43,19 @@
                 </div>
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li <?php if($_SERVER['SCRIPT_NAME']=="/index.php") { echo 'class="active"'; }?> class="active"><a href="./index.php">Home</a></li>
-                        <li <?php if($_SERVER['SCRIPT_NAME']=="/about-us.php") { echo 'class="active"'; }?>><a href="./about-us.php">About</a></li>
-                        <li <?php if($_SERVER['SCRIPT_NAME']=="/rooms.php") { echo 'class="active"'; }?>><a href="rooms.php">Rooms</a></li>
-                        <li><a href="#">Services</a>
+                        <li  class="<?php if ($page == "home") { echo "active"; } ?>"><a href="index.php">Home</a></li>
+                        <li class="<?php if ($page == "about") { echo "active"; } ?>"><a href="about-us.php">About</a></li>
+                        <li class="<?php if ($page == "room") { echo "active"; } ?>"> <a href="rooms.php">Rooms</a></li>
+                        <li class="<?php if ($page == "service") { echo "active"; } ?>"><a href="#">Services</a>
                             <ul class="drop-menu">
-                                <li><a href="about-us.html">Reservation</a></li>
-                                <li><a href="about-us.html">Resturant</a></li>
-                                <li><a href="rooms.html">Gym Center</a></li>
-                                <li><a href="services.html">Airport Pickup</a></li>
+                                <li><a href="rooms.php">Reservation</a></li>
+                                <li><a href="#">Resturant</a></li>
+                                <li><a href="#">Gym Center</a></li>
+                                <li><a href="#">Airport Pickup</a></li>
                             </ul>
                         </li>
-                        <li <?php if($_SERVER['SCRIPT_NAME']=="/blog.php") { echo 'class="active"'; }?>><a href="./blog.php">News</a></li>
-                        <li <?php if($_SERVER['SCRIPT_NAME']=="/contact.php") { echo 'class="active"'; }?>><a href="./contact.php">Contact</a></li>
+                        <li class="<?php if ($page == "news") { echo "active"; } ?>"><a href="./blog.php">News</a></li>
+                        <li class="<?php if ($page == "contact") { echo "active"; } ?>"><a href="./contact.php">Contact</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>

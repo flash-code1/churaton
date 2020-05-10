@@ -38,19 +38,19 @@
                     <div class="col-lg-12">
                         
                         <ul>
-                            <li class="active"><a href="./index.php">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Rooms</a></li>
-                            <li><a href="#">Facilities</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li class="<?php if ($page == "home") { echo "active"; } ?>"><a href="./index.php">Home</a></li>
+                            <li class="<?php if ($page == "about") { echo "active"; } ?>"><a href="#">About</a></li>
+                            <li class="<?php if ($page == "room") { echo "active"; } ?>"><a href="#">Rooms</a></li>
+                            <li class="<?php if ($page == "service") { echo "active"; } ?>"><a href="#">Facilities</a></li>
+                            <li class="<?php if ($page == "news") { echo "active"; } ?>"><a href="#">News</a></li>
+                            <li class="<?php if ($page == "contact") { echo "active"; } ?>"><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>
 <div class="row pt-5">
                     <div class="col-lg-12 ">
                         <div class="small text-white text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Site Was Developed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/flash-code1" target="_blank">Oluwaseun</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Developed <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/flash-code1" target="_blank">Oluwaseun</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
                     </div>
                 </div>
