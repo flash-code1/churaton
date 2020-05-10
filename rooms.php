@@ -93,7 +93,7 @@ include("header.php");
                                 </div>
                                 <div class="ri-info">
                                     <i class="flaticon-029-wifi"></i>
-                                    <p>High Wi-fii</p>
+                                    <p>High Wi-fi</p>
                                 </div>
                                 <div class="ri-info">
                                     <i class="flaticon-003-air-conditioner"></i>
