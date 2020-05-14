@@ -19,8 +19,8 @@ include("header.php");
                 <div class="col-lg-12">
                     <div class="contact-title">
                         <div class="section-title">
-                            <span>Contact us</span>
-                            <h2>Located in <br />FCT Abuja</h2>
+                            <span>CHURATON HOTELS LTD</span>
+                            <h2>Contact US</h2>
                         </div>
                         <a href="#" class="primary-btn">Get Directions</a>
                     </div>
@@ -49,8 +49,9 @@ include("header.php");
                         <img src="img/contact-logo.png" alt="">
                         <!-- company logo -->
                         <ul>
-                            <li>No. Something Somewhere, <br />Abuja, Nigeria</li>
-                            <li>+(234)535-4592</li>
+                            <li>No. 30 SOKODE CRESCENT,  OFF MICHAEL OPARA STREET <br />WUSE ZONE 5, ABUJA</li>
+                            <li>+(234)909-207-5278</li>
+                            <li>+(234)802-426-1384</li>
                             <li>info@churaton.com</li>
                             <li>Everyday: 06:00 -22:00</li>
                         </ul>

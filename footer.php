@@ -25,8 +25,8 @@
                     <div class="footer-item">
                         <h5>Contact Info</h5>
                         <ul>
-                            <li><img src="design/x1/img/placeholder.png" alt="">No. Something Somewhere,<br />Nigeria, Abuja</li>
-                            <li><img src="design/x1/img/phone.png" alt="">+ (234)816-2399614</li>
+                            <li><img src="design/x1/img/placeholder.png" alt="">No. 30 SOKODE CRESCENT,  OFF MICHAEL OPARA STREET <br />WUSE ZONE 5, ABUJA</li>
+                            <li><img src="design/x1/img/phone.png" alt="">+(234)806-282-7157</li>
                         </ul>
                     </div>
                 </div>
