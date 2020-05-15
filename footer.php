@@ -6,7 +6,7 @@
                 <div class="col-lg-4">
                     <div class="footer-item">
                         <div class="footer-logo">
-                            <a href="#"><img src="img/logo.png" alt=""></a>
+                            <a href="#"><img src="img/logo/logo.jpeg" alt=""></a>
                         </div>
                         <p> <b>CHURATON</b> </p>
                         <p>Best Hotel You can Find in the City</p>
