@@ -1,8 +1,5 @@
 /*
-Template Name: Influence Admin Template
-Author: jitu
-Email: chauhanjitu3@gmail.com
-File: js
+
 */
 $(function() {
     "use strict";
@@ -78,7 +75,7 @@ $(function() {
     // ============================================================== 
     // Chart Balance Bar
     // ============================================================== 
-    var ctx = document.getElementById("chartjs_balance_bar").getContext('2d');
+    var ctx = document.getElementById("chartjs_balance").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
 
@@ -86,14 +83,14 @@ $(function() {
         data: {
             labels: ["Current", "1-30", "31-60", "61-90", "91+"],
             datasets: [{
-                label: 'Aged Payables',
-                data: [500, 1000, 1500, 3700, 2500],
+                label: 'Male Customers',
+                data: [502, 1000, 1500, 3700, 2500],
                 backgroundColor: "rgba(89, 105, 255,.8)",
                 borderColor: "rgba(89, 105, 255,1)",
                 borderWidth:2
 
             }, {
-                label: 'Aged Receiables',
+                label: 'Female Customers',
                 data: [1000, 1500, 2500, 3500, 2500],
                 backgroundColor: "rgba(255, 64, 123,.8)",
                 borderColor: "rgba(255, 64, 123,1)",
@@ -380,7 +377,7 @@ $(function() {
         ykeys: ['y'],
         labels: ['Y'],
         lineColors: ['#ff407b'],
-        preUnits: ["$"]
+        preUnits: ["&#8358;"]
 
 
 

@@ -12,7 +12,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
                                 <h3 class="mb-2">Finance Dashboard </h3>
-                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                                <!-- <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p> -->
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
@@ -42,7 +42,7 @@
                                 <h5 class="card-header">Total Income</h5>
                                 <div class="card-body">
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">$5,79,000</h1>
+                                        <h1 class="mb-1">&#8358;5,79,000</h1>
                                     </div>
                                     <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                         <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">25%</span>
@@ -58,10 +58,10 @@
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Total Expences</h5>
+                                <h5 class="card-header">Total Expenses</h5>
                                 <div class="card-body">
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">$1,79,000</h1>
+                                        <h1 class="mb-1">&#8358;1,79,000</h1>
                                     </div>
                                     <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
                                         <span class="icon-circle-small icon-box-xs text-danger bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">15%</span>
@@ -80,7 +80,7 @@
                                 <h5 class="card-header">Cash on Hand</h5>
                                 <div class="card-body">
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">$79,000</h1>
+                                        <h1 class="mb-1">&#8358;79,000</h1>
                                     </div>
                                     <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                         <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">25%</span>
@@ -96,10 +96,10 @@
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Net Profit Margin</h5>
+                                <h5 class="card-header">Online Payment</h5>
                                 <div class="card-body">
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">$92,000</h1>
+                                        <h1 class="mb-1">&#8358;92,000</h1>
                                     </div>
                                     <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                         <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span> <span class="ml-1">25%</span>
@@ -121,9 +121,9 @@
                         <!-- ============================================================== -->
                         <!-- ap and ar balance  -->
                         <!-- ============================================================== -->
-                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12" hidden>
                             <div class="card">
-                                <h5 class="card-header">AP and AR Balance
+                                <h5 class="card-header">Male and Female
                                 </h5>
                                 <div class="card-body">
                                     <canvas id="chartjs_balance_bar"></canvas>
@@ -136,7 +136,7 @@
                         <!-- ============================================================== -->
                         <!-- gross profit  -->
                         <!-- ============================================================== -->
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <h5 class="card-header">% of Income Budget</h5>
                                 <div class="card-body">
@@ -155,7 +155,7 @@
                         <!-- ============================================================== -->
                         <!-- profit margin  -->
                         <!-- ============================================================== -->
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <h5 class="card-header">% of Expenses Budget</h5>
                                 <div class="card-body">
@@ -254,19 +254,6 @@
                             </div>
                         </div>
                         <!-- ============================================================== -->
-                        <!-- end disputed invoices  -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- account payable age  -->
-                        <!-- ============================================================== -->
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Accounts Payable Age</h5>
-                                <div class="card-body">
-                                    <div id="account" style="height: 300px;"></div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- ============================================================== -->
                         <!-- end account payable age  -->
                         <!-- ============================================================== -->

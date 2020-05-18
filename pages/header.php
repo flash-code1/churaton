@@ -102,11 +102,11 @@
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Finance</a>
+                                            <a class="nav-link" href="dashboard.php">Finance</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" href="#">Table</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </li>
@@ -134,10 +134,10 @@
                                             <a class="nav-link" href="#">Resturant</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/chart-charts.html">Event</a>
+                                            <a class="nav-link" href="#">Event</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/chart-morris.html">Gym</a>
+                                            <a class="nav-link" href="#">Gym</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -147,16 +147,16 @@
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/general-table.html">Sales Report</a>
+                                            <a class="nav-link" href="#">Sales Report</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/data-tables.html">Inventory Report</a>
+                                            <a class="nav-link" href="#">Inventory Report</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/data-tables.html">Staff Activity</a>
+                                            <a class="nav-link" href="#">Staff Activity</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/data-tables.html">Control</a>
+                                            <a class="nav-link" href="#">Control</a>
                                         </li>
                                     </ul>
                                 </div>
