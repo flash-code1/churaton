@@ -55,6 +55,7 @@
                         </li>
                         <li class="<?php if ($page == "news") { echo "active"; } ?>"><a href="./blog.php">News</a></li>
                         <li class="<?php if ($page == "contact") { echo "active"; } ?>"><a href="./contact.php">Contact</a></li>
+                        <li class=""><a href="account/login.php">Admin</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
