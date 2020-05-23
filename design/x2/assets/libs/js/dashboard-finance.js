@@ -377,7 +377,7 @@ $(function() {
         ykeys: ['y'],
         labels: ['Y'],
         lineColors: ['#ff407b'],
-        preUnits: ["&#8358;"]
+        preUnits: ["$"]
 
 
 

@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="../design/x2/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../design/x2/assets/vendor/charts/morris-bundle/morris.css">
     <link rel="stylesheet" type="text/css" href="../design/x2/assets/vendor/daterangepicker/daterangepicker.css" />
+    <!-- imporing DATATABLES -->
+    <link rel="stylesheet" type="text/css" href="../design/x2/assets/vendor/datatables/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="../design/x2/assets/vendor/datatables/css/buttons.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="../design/x2/assets/vendor/datatables/css/select.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="../design/x2/assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
     <title>Churaton - Admin</title>
 </head>
 
@@ -98,24 +103,24 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <a class="nav-link <?php if ($avt == 'index') { echo 'active'; }?>" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="dashboard.php">Finance</a>
                                         </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link" href="#">Table</a>
-                                        </li> -->
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Sales Overview</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Inventory & News</a>
+                                <a class="nav-link <?php if ($avt == 'invent') { echo 'active'; }?>" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Inventory & News</a>
                                 <div id="submenu-2" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Inventory - Property<span class="badge badge-secondary">New</span></a>
+                                            <a class="nav-link" href="invent.php">Inventory - Property<span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Blog & News</a>

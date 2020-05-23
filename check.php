@@ -31,10 +31,11 @@
                         <div class="room-selector">
                             <p>Room</p>
                             <select class="suit-select">
-                                <option>Eg. Master suite</option>
-                                <option value="">Double Room</option>
-                                <option value="">Single Room</option>
-                                <option value="">Special Room</option>
+                                <option value="0">Select Room Type</option>
+                                <option value="1">Master suite</option>
+                                <option value="2">Double Room</option>
+                                <option value="3">Single Room</option>
+                                <option value="4">Special Room</option>
                             </select>
                         </div>
                         <button type="submit">Go</button>
