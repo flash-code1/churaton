@@ -1,3 +1,6 @@
+<?php
+include("functions/db/connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

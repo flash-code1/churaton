@@ -3,7 +3,6 @@
   include("header.php");
 ?>
 <style>
-    
     .file-upload{display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
     .file-upload .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
     .file-upload .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
@@ -19,6 +18,9 @@
     .file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
     </style>
 <!-- start of inventory -->
+<?php
+// here we will use alert
+?>
 <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <div class="row">
@@ -58,7 +60,7 @@
                                         <li>Room Code.</li>
                                         <li>Room Name.</li>
                                         <li>Price.</li>
-                                        <li>Number of Rooms.</li>
+                                        <li>Number of Allowed Adult and Children.</li>
                                         <li>Image.</li>
                                     </ul>
                                 </div>
@@ -70,7 +72,7 @@
                         <!-- ============================================================== -->
                         <!-- basic form  -->
                         <!-- ============================================================== -->
-                        <form>
+                        <form  action="../functions/invent_upload.php" method="post" enctype="multipart/form-data">
                         <div class="row">
                         
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -97,7 +99,7 @@
                                                 <input type="text" placeholder="Room Number" name="room_code" class="form-control" required>
                                             </div>
                                             <div class="input-group mb-3"><span class="input-group-prepend"><span class="input-group-text"> <i class="fas fa-heart"></i></span></span>
-                                                <input type="text" placeholder="Name" name="name" class="form-control" required>
+                                                <input type="text" placeholder="Name" name="room_name" class="form-control" required>
                                             </div>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend"><span class="input-group-text">&#8358;</span></div>
@@ -127,18 +129,18 @@
   }
 });
 </script>
-                                            </div>
+    </div>
                                         </div>
                                         <div class="form-group">
                                         <div class="input-group mb-3"><span class="input-group-prepend"><span class="input-group-text"> <i class="fas fa-pencil-alt"></i></span></span>
-                                                <textarea required="" placeholder="Description" class="form-control"></textarea>
+                                                <textarea required="" name="descript" placeholder="Description" class="form-control"></textarea>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                        <!-- ===                                </div>
                             </div>
                         </div>
-                        <!-- ============================================================== -->
+=========================================================== -->
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="section-block" id="select">
@@ -150,35 +152,36 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                          <div class="row">
-                                         <div class="input-group col-md-4"><span class="input-group-prepend"><span class="input-group-text"> <i class="fas fa-hourglass-half"></i></span></span>
-                                                <input type="number" placeholder="How Many Rooms? eg. 10 " name="name" class="form-control" required>
+                                         <!-- <div class="input-group col-md-4"><span class="input-group-prepend"><span class="input-group-text"> <i class="fas fa-hourglass-half"></i></span></span>
+                                                <input type="number" placeholder="How Many Rooms? eg. 10 " name="" class="form-control" required>
+                                            </div> -->
+                                            <div class="input-group col-md-6"><span class="input-group-prepend"><span class="input-group-text"> <i class="far fa-user"></i></span></span>
+                                                <input type="number" placeholder="Maximum Adult" name="adult" class="form-control" required>
                                             </div>
-                                            <div class="input-group col-md-4"><span class="input-group-prepend"><span class="input-group-text"> <i class="far fa-user"></i></span></span>
-                                                <input type="number" placeholder="Maximum Adult" name="name" class="form-control" required>
-                                            </div>
-                                            <div class="input-group col-md-4"><span class="input-group-prepend"><span class="input-group-text"> <i class="far fa-smile"></i></span></span>
-                                                <input type="number" placeholder="Maximum Kids" name="name" class="form-control" required>
+                                            <br>
+                                            <div class="input-group col-md-6"><span class="input-group-prepend"><span class="input-group-text"> <i class="far fa-smile"></i></span></span>
+                                                <input type="number" placeholder="Maximum Kids" name="kids" class="form-control" required>
                                             </div>
                                          </div>
                                             <h4>Services</h4>
                                             <label class="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" checked="" class="custom-control-input"><span class="custom-control-label"> <i class="fas fa-wifi"></i> WIFI</span>
+                                                <input type="checkbox" name="wifi" checked="" class="custom-control-input"><span class="custom-control-label"> <i class="fas fa-wifi"></i> WIFI</span>
                                             </label>
                                             <label class="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" class="custom-control-input"><span class="custom-control-label"> <i class="fas fa-tv"></i> TV</span>
+                                                <input type="checkbox" name="tv" value="" class="custom-control-input"><span class="custom-control-label"> <i class="fas fa-tv"></i> TV</span>
                                             </label>
                                             <label class="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" class="custom-control-input"><span class="custom-control-label"> <i class="far fa-snowflake"></i> AC</span>
+                                                <input type="checkbox" name="ac" class="custom-control-input"><span class="custom-control-label"> <i class="far fa-snowflake"></i> AC</span>
                                             </label>
                                             <label class="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" class="custom-control-input"><span class="custom-control-label"> <i class="fas fa-car"></i> Parking</span>
+                                                <input type="checkbox" name="park" class="custom-control-input"><span class="custom-control-label"> <i class="fas fa-car"></i> Parking</span>
                                             </label>
                                             <label class="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" class="custom-control-input"><span class="custom-control-label"> <i class="far fa-life-ring"></i> Pool</span>
+                                                <input type="checkbox" name="pool" class="custom-control-input"><span class="custom-control-label"> <i class="far fa-life-ring"></i> Pool</span>
                                             </label>
                                         </div>
-                                        <div class="form-group row text-right">
-                                            <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                        <div class="form-group text-right">
+                                            <div class="">
                                                 <button type="submit" class="btn btn-space btn-primary">Submit</button>
                                                 <button class="btn btn-space btn-secondary">Cancel</button>
                                             </div>
