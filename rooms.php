@@ -12,8 +12,26 @@ include("header.php");
     <?php include("check.php") ?>
     <!-- Search Filter Section End -->
     <?php
-    if (isset($_POST[""])) {
+    if (isset($_POST["check_out"]) && isset($_POST["check_in"]) && isset($_POST["group"]) && isset($_POST["room"])) {
         // check a function
+        $check_in = $_POST["check_in"];
+        $main_c_i = strtotime($check_in);
+        $check_out = $_POST["check_out"];
+        $main_c_o = strtotime($check_out);
+        // adding to db
+        $newformatCI = date('Y-m-d',$main_c_i);
+        $newformatCO = date('Y-m-d',$main_c_o);
+        $adult = $_POST["adult"];
+        $kids = $_POST["kids"];
+        $room = $_POST["room"];
+        $group = $_POST["group"];
+        if ($group == 0 || $group == "0") {
+            $query = "SELECT * FROM `room_inventory` WHERE is_active = '1' && (((booked_out < '$newformatCI') OR (booked_out IS NULL OR booked_in IS NULL)) && (max_adult >= '$adult' && max_kids >= '$kids'))";
+        } else {
+        $query = "SELECT * FROM `room_inventory` WHERE is_active = '1' && (((booked_out < '$newformatCI') OR (booked_out IS NULL OR booked_in IS NULL)) && (max_adult >= '$adult' && max_kids >= '$kids')) && room_group = '$group'";
+        // echo "Check in : ".$newformatCI;
+        }
+        $result = mysqli_query($connection, $query);
     } else {
         $query = "SELECT * FROM `room_inventory` WHERE is_active = '1' && status = '0'";
         $result = mysqli_query($connection, $query);

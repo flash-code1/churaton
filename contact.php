@@ -71,9 +71,10 @@ include("header.php");
     <!-- Contact Section End -->
 
      <!-- Map Section Begin -->
+     <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=30%20Sokode%20Crescent%2C%20Off%20Micheal%20Okpara%20Street%2C%20Wuse%20Zone%205%2C%20Wuse%2C%20Abuja%2C%20FCT&t=&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="">embed google maps</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div> -->
      <div class="map">
         <iframe
-            src="https://maps.google.com/maps?q=abuja&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=30%20Sokode%20Crescent%2C%20Off%20Micheal%20Okpara%20Street%2C%20Wuse%20Zone%205%2C%20Wuse%2C%20Abuja%2C%20FCT&t=&z=19&ie=UTF8&iwloc=&output=embed"
             height="910" style="border:0;" allowfullscreen=""></iframe>
     </div>
     <!-- Map Section End -->
