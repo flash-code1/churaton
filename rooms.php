@@ -1,6 +1,7 @@
 <?php $page = "room"; $title = "Rooms";?>
 <?php
 include("header.php");
+session_start();
 ?>
 
 <!-- Hero Area Section Begin -->
@@ -12,23 +13,50 @@ include("header.php");
     <?php include("check.php") ?>
     <!-- Search Filter Section End -->
     <?php
+    $check_button = "";
     if (isset($_POST["check_out"]) && isset($_POST["check_in"]) && isset($_POST["group"]) && isset($_POST["room"])) {
         // check a function
+        $check_button = "1";
         $check_in = $_POST["check_in"];
         $main_c_i = strtotime($check_in);
         $check_out = $_POST["check_out"];
         $main_c_o = strtotime($check_out);
+
+        $diff_time = $main_c_o - $main_c_i;
+        $_SESSION["diff_date"] = $diff_time;
         // adding to db
         $newformatCI = date('Y-m-d',$main_c_i);
         $newformatCO = date('Y-m-d',$main_c_o);
         $adult = $_POST["adult"];
         $kids = $_POST["kids"];
         $room = $_POST["room"];
+        if ($room == 0) {
+            $room = 1;
+        }
         $group = $_POST["group"];
-        if ($group == 0 || $group == "0") {
-            $query = "SELECT * FROM `room_inventory` WHERE is_active = '1' && (((booked_out < '$newformatCI') OR (booked_out IS NULL OR booked_in IS NULL)) && (max_adult >= '$adult' && max_kids >= '$kids'))";
+        // we will make a session of this
+        $_SESSION["check_in"] = $newformatCI;
+        $_SESSION["check_out"] = $newformatCO;
+        $_SESSION["adult"] = $adult;
+        $_SESSION["kids"] = $kids;
+        $_SESSION["room"] = $room;
+        $_SESSION["group"] = $group;
+        $digits = 6;
+        $randms = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+        $_SESSION["randms"] = $randms;
+        // Then we will call this group
+        if ($group != 0 || $group != "0") {
+            $query = "SELECT room_inventory.id, room_inventory.room_code, room_inventory.room_group,
+            room_inventory.room_name, room_inventory.tv, room_inventory.wifi, room_inventory.ac, room_inventory.parking,
+            room_inventory.pool, room_inventory.description, room_inventory.price, room_inventory.is_active,
+            room_inventory.max_users, room_inventory.max_adult, room_inventory.max_kids, room_inventory.star, room_inventory.img,
+            room_inventory.status, booking_date.booked_on, booking_date.booked_out FROM `room_inventory` INNER JOIN `booking_date` ON room_inventory.id = booking_date.room_id WHERE room_inventory.is_active = '1' && (((booking_date.booked_out < '$newformatCI') OR (booking_date.booked_out IS NULL OR booking_date.booked_on IS NULL)) && (room_inventory.max_adult >= '$adult' && room_inventory.max_kids >= '$kids')) && room_group = '$group'";
         } else {
-        $query = "SELECT * FROM `room_inventory` WHERE is_active = '1' && (((booked_out < '$newformatCI') OR (booked_out IS NULL OR booked_in IS NULL)) && (max_adult >= '$adult' && max_kids >= '$kids')) && room_group = '$group'";
+        $query = "SELECT room_inventory.id, room_inventory.room_code, room_inventory.room_group,
+        room_inventory.room_name, room_inventory.tv, room_inventory.wifi, room_inventory.ac, room_inventory.parking,
+        room_inventory.pool, room_inventory.description, room_inventory.price, room_inventory.is_active,
+        room_inventory.max_users, room_inventory.max_adult, room_inventory.max_kids, room_inventory.star, room_inventory.img,
+        room_inventory.status, booking_date.booked_on, booking_date.booked_out FROM `room_inventory` INNER JOIN `booking_date` ON room_inventory.id = booking_date.room_id WHERE room_inventory.is_active = '1' && (((booking_date.booked_out < '$newformatCI') OR (booking_date.booked_out IS NULL OR booking_date.booked_on IS NULL)) && (room_inventory.max_adult >= '$adult' && room_inventory.max_kids >= '$kids'))";
         // echo "Check in : ".$newformatCI;
         }
         $result = mysqli_query($connection, $query);
@@ -75,6 +103,7 @@ include("header.php");
                                
                                 <h2><?php echo $row["room_name"]; ?></h2>
                             </div>
+                            <p> &#x20A6; <?php echo number_format($row["price"], 2);?> Per Night</p>
                             <p><?php echo $row["description"];?></p>
                             <div class="ri-features">
                                 <?php
@@ -117,7 +146,15 @@ include("header.php");
                                 }
                                 ?>
                             </div>
-                            <a href="#" class="primary-btn">Make a Reservation</a>
+                            <?php
+                            if ($check_button == "1") {
+?>
+ <a href="room_book.php?edit=<?php echo $row["id"];?>" class="primary-btn">Make a Reservation</a>
+<?php
+                            } else {?>
+                                 <a href="rooms.php" class="primary-btn">Check Avalability</a>
+                           <?php }
+                            ?>
                         </div>
                     </div>
                 </div>

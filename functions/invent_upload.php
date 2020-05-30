@@ -69,8 +69,18 @@ if (isset($_POST["group"]))
     VALUES ('{$room_code}', '{$group}', '{$room_name}', '{$tv}', '{$wifi}', '{$ac}', '{$park}', '{$pool}', '{$descript}', '{$price}',
     '1', NULL, '{$max_users}', '{$kids}', '{$adult}', '0', '5', '{$sig_passport_one}')");
     if ($post_invent) {
+      $select_id = mysqli_query($connection, "SELECT * FROM `room_inventory`ORDER BY id DESC LIMIT 1");
+      $xy = mysqli_fetch_array($select_id);
+      $int_id = $xy["id"];
+      $insert_m = mysqli_query($connection, "INSERT INTO `booking_date` (`room_id`, `booked_on`, `booked_out`) VALUES ('{$int_id}', NULL, NULL)");
+      if ($insert_m) {
         $_SESSION["Lack_of_intfund_$randms"] = "Registration Successful!";
         echo header ("Location: ../pages/invent.php?message101=$randms");
+      } else {
+        $_SESSION["Lack_of_intfund_$randms"] = "Registration Successful!";
+        echo header ("Location: ../pages/invent.php?message404=$randms");
+      }
+       
     } else {
         $_SESSION["Lack_of_intfund_$randms"] = "Registration Successful!";
         echo header ("Location: ../pages/invent.php?message404=$randms");
