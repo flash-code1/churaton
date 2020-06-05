@@ -1,6 +1,6 @@
 <?php
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'sekanisy');
+define('DB_USERNAME', 'churaton_hotel2');
 define('DB_PASSWORD', '4r6WY#JP+rnl67');
 define('DB_CHARSET', 'utf8');
 define('DB_NAME', 'churaton');
