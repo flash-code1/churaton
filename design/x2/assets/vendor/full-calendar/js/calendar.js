@@ -3,7 +3,7 @@ $(function() {
 
     $(document).ready(function() {
 
-        $('#calendar1').fullCalendar({
+        $('#calendarx1').fullCalendar({
             header: {
                 left: 'prev,next today',
                 center: 'title',
@@ -14,7 +14,7 @@ $(function() {
             editable: true,
             eventLimit: true, // allow "more" link when too many events
             events: [{
-                    title: 'All Day Event',
+                    title: 'All Day Event mee',
                     start: '2018-03-01',
                 },
                 {
@@ -32,7 +32,7 @@ $(function() {
                 },
                 {
                     id: 999,
-                    title: 'Repeating Event',
+                    title: 'Repeating Event 3',
                     start: '2018-03-16T16:00:00',
                     backgroundColor: '#ffc108',
                     borderColor: '#ffc108'
@@ -81,7 +81,7 @@ $(function() {
                     borderColor: '#ef172c'
                 },
                 {
-                    title: 'Click for Google',
+                    title: 'Click for Google me',
                     url: 'http://google.com/',
                     start: '2018-03-28',
                     backgroundColor: '#4285F4',
@@ -98,23 +98,6 @@ $(function() {
 
         /* initialize the external events
         -----------------------------------------------------------------*/
-
-        $('#external-events .fc-event').each(function() {
-
-            // store data so the calendar knows to render an event upon drop
-            $(this).data('event', {
-                title: $.trim($(this).text()), // use the element's text as the event title
-                stick: true // maintain when user navigates (see docs on the renderEvent method)
-            });
-
-            // make the event draggable using jQuery UI
-            $(this).draggable({
-                zIndex: 999,
-                revert: true, // will cause the event to go back to its
-                revertDuration: 0 //  original position after the drag
-            });
-
-        });
 
 
         /* initialize the calendar

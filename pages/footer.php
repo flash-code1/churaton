@@ -88,5 +88,13 @@
     <script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
     <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+<!--  -->
+    <script src="../design/x2/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src='../design/x2/assets/vendor/full-calendar/js/moment.min.js'></script>
+    <script src='../design/x2/assets/vendor/full-calendar/js/fullcalendar.js'></script>
+    <script src='../design/x2/assets/vendor/full-calendar/js/jquery-ui.min.js'></script>
+    <!-- <script src='../design/x2/assets/vendor/full-calendar/js/calendar.js'></script> -->
+    <script src="../design/x2/assets/libs/js/main-js.js"></script>
+    <!-- <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script> -->
 </body>
 </html>

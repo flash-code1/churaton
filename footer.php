@@ -70,5 +70,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="design/x1/js/owl.carousel.min.js"></script>
     <script src="design/x1/js/main.js"></script>
     <!-- datatable script -->
+    <!--  -->
     </body>
 </html>
