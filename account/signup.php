@@ -143,7 +143,7 @@ $randms = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
                 </div> -->
             </div>
             <div class="card-footer bg-white">
-                <p>Already member? <a href="login.php" class="text-secondary">Login Here.</a></p>
+                <p>Already member? <a href="index.php" class="text-secondary">Login Here.</a></p>
             </div>
         </div>
     </form>
