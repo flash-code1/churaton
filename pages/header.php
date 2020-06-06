@@ -7,6 +7,10 @@ session_start();
 $username = $_SESSION["username"];
 $email = $_SESSION["email"];
 $usertype = $_SESSION["usertype"];
+if(!$_SESSION["usertype"] == "staff"){
+    header("location: ../account/login.php");
+    exit;
+}
 ?>
 <head>
     <!-- Required meta tags -->
