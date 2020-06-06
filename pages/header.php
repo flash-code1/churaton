@@ -8,7 +8,7 @@ $username = $_SESSION["username"];
 $email = $_SESSION["email"];
 $usertype = $_SESSION["usertype"];
 if(!$_SESSION["usertype"] == "staff"){
-    header("location: ../account/login.php");
+    header("location: ../account/index.php");
     exit;
 }
 ?>
