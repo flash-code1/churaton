@@ -2,7 +2,6 @@
 <?php
 include("main.php");
 include("header.php");
-session_start();
 ?>
 <div class="hero-area set-bg other-page" data-setbg="img/pillow.jpg">
     </div>
@@ -10,20 +9,31 @@ session_start();
 <?php
 if (isset($_GET["edit"])) {
     $id = $_GET["edit"];
- $check_in = $_SESSION["check_in"];
- $check_out = $_SESSION["check_out"];
- $days_calc = floor((($_SESSION["diff_date"] / 60) / 60) / 24);
- $adult = $_SESSION["adult"];
- $kids = $_SESSION["kids"];
- $room = $_SESSION["room"];
- $sel_room = mysqli_query($connection, "SELECT * FROM room_inventory WHERE id = '$id'");
+    //  here we will get transaction id
+$randms = $_SESSION["randms"];
+// End of randms
+ 
+//  SELECT THE CAHCE
+$select_cache = mysqli_query($connection, "SELECT * FROM reserve_cache WHERE cahce_id = '$randms'  ORDER BY cahce_id ASC LIMIT 1");
+$sc = mysqli_fetch_array($select_cache); 
+ $check_in = $sc["check_in"];
+ $check_out = $sc["check_out"];
+ $diff_time = strtotime($check_out) - strtotime($check_in);
+ $days_calc = floor((($diff_time / 60) / 60) / 24) + 1;
+ $adult = $sc["adult"];
+ $kids = $sc["kid"];
+ $room = $sc["room"];
+ 
+//  fuck move to next
+$sel_room = mysqli_query($connection, "SELECT * FROM room_inventory WHERE id = '$id'");
  $x = mysqli_fetch_array($sel_room);
  $room_name = $x["room_name"];
- $group = $_SESSION["group"];
+ $group = $x["room_group"];
  $room_code = $x["room_code"];
+//  PRICE CALC
+
  $price = number_format(($x["price"] * $room) * $days_calc);
-//  here we will get transaction id
-$randms = $_SESSION["randms"];
+echo $days_calc;
 ?>
     <!-- Search Filter Section Begin -->
     <section class="search-filter">
@@ -60,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $c_time = $_POST["c_time"];
     $pay_t = $_POST["pay_t"];
     $ref_id = $_POST["ref_id"];
-    $m_price = $price;
+    // $m_price = $_POST["amount_due"];
     $cpt = 0;
     if ($_POST["g_name"] != "") {
         $cpt = 1;
@@ -80,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     `phone`, `amount`, `payment_status`, `note`, `date`, `date_and_time`, `time`, 
     `booking_for`, `primary_guest_name`, `plan`, `adult`, `kids`, `no_of_room`, `payment_type`) VALUES 
     ('{$r_t}', '{$c_i}', '{$c_o}', '{$id}', '{$ref_id}', '{$full_name}', '{$email}', 
-    '{$phone}', '{$m_price}', 'Pending', '{$note}', '{$ts2}', '{$ts}', '{$c_time}',
+    '{$phone}', '{$price}', 'Pending', '{$note}', '{$ts2}', '{$ts}', '{$c_time}',
     '{$cpt}', '{$g_name}',
     NULL, '{$ad}', '{$kd}', '{$no_room}', '{$pay_t}')");
     if ($booking) {
@@ -239,7 +249,7 @@ function myFunction() {
                             </div>
                             <div class="col-lg-6">
                             <label for="">Amount Due</label>
-                            <input type="text" value="&#x20A6; <?php echo $price;?>" readonly>
+                            <input type="text" name="amount_due" value="&#x20A6; <?php echo $price;?>" readonly>
                             </div>
                             <div class="col-lg-12">
                                 <br>
@@ -267,7 +277,7 @@ function myFunction() {
                             <li>Amount Due: &#x20A6;<?php echo $price; ?></li>
                             <li>VAT: 0.2%</li>
                         </ul>
-                        <a href="#" class="primary-btn">Print Invoice</a>
+                        <a disabled class="primary-btn" style="color: white;">Auto E-mail</a>
                     </div>
                 </div>
             </div>

@@ -124,7 +124,7 @@ if (isset($_GET["edit"])) {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php 
+                                                <?php
                                                 $date = $check_in;
                                                 $end_date = $check_out;
                                                 $xm = 1;

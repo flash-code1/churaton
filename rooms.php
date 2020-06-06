@@ -1,7 +1,6 @@
 <?php $page = "room"; $title = "Rooms";?>
 <?php
 include("header.php");
-session_start();
 ?>
 
 <!-- Hero Area Section Begin -->
@@ -22,8 +21,6 @@ session_start();
         $check_out = $_POST["check_out"];
         $main_c_o = strtotime($check_out);
 
-        $diff_time = $main_c_o - $main_c_i;
-        $_SESSION["diff_date"] = $diff_time;
         // adding to db
         $newformatCI = date('Y-m-d',$main_c_i);
         $newformatCO = date('Y-m-d',$main_c_o);
@@ -34,32 +31,47 @@ session_start();
             $room = 1;
         }
         $group = $_POST["group"];
-        // we will make a session of this
-        $_SESSION["check_in"] = $newformatCI;
-        $_SESSION["check_out"] = $newformatCO;
-        $_SESSION["adult"] = $adult;
-        $_SESSION["kids"] = $kids;
-        $_SESSION["room"] = $room;
-        $_SESSION["group"] = $group;
+        // STORE TO DB 
         $digits = 6;
-        $randms = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
-        $_SESSION["randms"] = $randms;
-        // Then we will call this group
-        if ($group != 0 || $group != "0") {
+         $randms = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+         $_SESSION["randms"] = $randms;
+        $store_cache = mysqli_query($connection, "INSERT INTO `reserve_cache`
+        (`cahce_id`, `check_in`, `check_out`, `adult`, `kid`, `room`, `room_group`)
+        VALUES ('{$randms}', '{$newformatCI}', '{$newformatCO}',
+        '{$adult}', '{$kids}', '{$room}', '{$group}')");
+        if ($store_cache) {
+            // echo cont.
+            if ($group != 0 || $group != "0") {
+                $query = "SELECT  MAX(booked.out) (room_inventory.id), room_inventory.room_code, room_inventory.room_group,
+                room_inventory.room_name, room_inventory.tv, room_inventory.wifi, room_inventory.ac, room_inventory.parking,
+                room_inventory.pool, room_inventory.description, room_inventory.price, room_inventory.is_active,
+                room_inventory.max_users, room_inventory.max_adult, room_inventory.max_kids, room_inventory.star, room_inventory.img,
+                room_inventory.status, booking_date.booked_on, booking_date.booked_out FROM `room_inventory` INNER JOIN `booking_date` ON room_inventory.id = booking_date.room_id WHERE room_inventory.is_active = '1' AND (((booking_date.booked_out < '$newformatCI') AND (room_inventory.max_adult >= '$adult' && room_inventory.max_kids >= '$kids')) AND room_group = '$group') ";
+            } else {
             $query = "SELECT room_inventory.id, room_inventory.room_code, room_inventory.room_group,
             room_inventory.room_name, room_inventory.tv, room_inventory.wifi, room_inventory.ac, room_inventory.parking,
             room_inventory.pool, room_inventory.description, room_inventory.price, room_inventory.is_active,
             room_inventory.max_users, room_inventory.max_adult, room_inventory.max_kids, room_inventory.star, room_inventory.img,
-            room_inventory.status, booking_date.booked_on, booking_date.booked_out FROM `room_inventory` INNER JOIN `booking_date` ON room_inventory.id = booking_date.room_id WHERE room_inventory.is_active = '1' && (((booking_date.booked_out < '$newformatCI') OR (booking_date.booked_out IS NULL OR booking_date.booked_on IS NULL)) && (room_inventory.max_adult >= '$adult' && room_inventory.max_kids >= '$kids')) && room_group = '$group'";
+            room_inventory.status, booking_date.booked_on, booking_date.booked_out FROM `room_inventory` INNER JOIN `booking_date` ON room_inventory.id = booking_date.room_id WHERE room_inventory.is_active = '1' AND ((booking_date.booked_out < '$newformatCI') AND (room_inventory.max_adult >= '$adult' && room_inventory.max_kids >= '$kids'))";
+            // echo "Check in : ".$newformatCI;
+            }
+            $result = mysqli_query($connection, $query);
         } else {
-        $query = "SELECT room_inventory.id, room_inventory.room_code, room_inventory.room_group,
-        room_inventory.room_name, room_inventory.tv, room_inventory.wifi, room_inventory.ac, room_inventory.parking,
-        room_inventory.pool, room_inventory.description, room_inventory.price, room_inventory.is_active,
-        room_inventory.max_users, room_inventory.max_adult, room_inventory.max_kids, room_inventory.star, room_inventory.img,
-        room_inventory.status, booking_date.booked_on, booking_date.booked_out FROM `room_inventory` INNER JOIN `booking_date` ON room_inventory.id = booking_date.room_id WHERE room_inventory.is_active = '1' && (((booking_date.booked_out < '$newformatCI') OR (booking_date.booked_out IS NULL OR booking_date.booked_on IS NULL)) && (room_inventory.max_adult >= '$adult' && room_inventory.max_kids >= '$kids'))";
-        // echo "Check in : ".$newformatCI;
+            // echho an erro
+            echo header("location: 404.php");
         }
-        $result = mysqli_query($connection, $query);
+        // we will make a session of this
+        // $_SESSION["check_in"] = $newformatCI;
+        // $_SESSION["check_out"] = $newformatCO;
+        // $_SESSION["adult"] = $adult;
+        // $_SESSION["kids"] = $kids;
+        // $_SESSION["room"] = $room;
+        // $_SESSION["group"] = $group;
+        
+        // WE WILL BE WRITING A CODE TO SAVE IT TO 
+        // CHECK PHP
+        // Then we will call this group
+        
     } else {
         $query = "SELECT * FROM `room_inventory` WHERE is_active = '1' && status = '0'";
         $result = mysqli_query($connection, $query);

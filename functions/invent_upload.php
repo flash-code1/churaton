@@ -72,7 +72,8 @@ if (isset($_POST["group"]))
       $select_id = mysqli_query($connection, "SELECT * FROM `room_inventory`ORDER BY id DESC LIMIT 1");
       $xy = mysqli_fetch_array($select_id);
       $int_id = $xy["id"];
-      $insert_m = mysqli_query($connection, "INSERT INTO `booking_date` (`room_id`, `booked_on`, `booked_out`) VALUES ('{$int_id}', NULL, NULL)");
+      $date = date ("Y-m-d", strtotime("-1 day", strtotime($date)));
+      $insert_m = mysqli_query($connection, "INSERT INTO `booking_date` (`room_id`, `booked_on`, `booked_out`) VALUES ('{$int_id}', '{$date}', '{$date}')");
       if ($insert_m) {
         $_SESSION["Lack_of_intfund_$randms"] = "Registration Successful!";
         echo header ("Location: ../pages/invent.php?message101=$randms");
